@@ -1,3 +1,12 @@
 group 'pl.maciejcp.spring-boot-scala-test'
 version '1.0-SNAPSHOT'
 
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+}

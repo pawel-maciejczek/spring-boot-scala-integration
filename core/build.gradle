@@ -1,0 +1,9 @@
+apply plugin: 'scala'
+
+dependencies {
+    def scalaVersion = 'org.scala-lang:scala-library:2.11.7'
+    compile scalaVersion
+    testCompile scalaVersion
+    testCompile 'junit:junit:4.11'
+}
+

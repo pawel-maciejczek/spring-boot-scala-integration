@@ -22,6 +22,7 @@ dependencies {
     compile("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
     compile("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
     compile("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jacksonVersion}")
+    compile("com.fasterxml.jackson.module:jackson-module-scala_2.11:${jacksonVersion}")
 
     testCompile 'junit:junit:4.11'
 }

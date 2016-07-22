@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 import pl.maciejcp.core.service.EchoService;
+import pl.maciejcp.core.service.JavaFutureEchoService;
 
 @EnableAsync
 @SpringBootApplication
@@ -14,7 +15,7 @@ public class Application {
     }
 
     @Bean
-    public EchoService echoService() {
-        return new EchoService();
+    public JavaFutureEchoService echoService() {
+        return new JavaFutureEchoService(new EchoService());
     }
 }

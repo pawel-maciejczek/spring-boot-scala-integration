@@ -1,4 +1,5 @@
 rootProject.name = 'main'
 include ':core'
-include ':web-java'
+//include ':web-java'
+include ':web-java-deferred'
 //include ':web-scala'

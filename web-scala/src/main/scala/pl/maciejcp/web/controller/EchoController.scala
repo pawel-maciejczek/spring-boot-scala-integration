@@ -1,16 +1,13 @@
 package pl.maciejcp.web.controller
 
-import java.util.concurrent.Future
-
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.{RequestMapping, RequestParam, RestController}
 import org.springframework.web.context.request.async.DeferredResult
 import pl.maciejcp.core.service.{EchoResponse, EchoService}
+import pl.maciejcp.util.concurrent.FutureAdapter.convert
 
 import scala.Option
 import scala.collection.Map
-
-import pl.maciejcp.util.concurrent.FutureAdapter.convert
 
 @RequestMapping(Array("/echo"))
 @RestController
@@ -18,7 +15,6 @@ class EchoController @Autowired()(service: EchoService) {
 
   private implicit val executionContext = scala.concurrent.ExecutionContext.global
 
-  //    @Async
   @RequestMapping(Array("/"))
   def echo(@RequestParam(required = false, name = "input") input: String): String = {
     service.echo(input)
@@ -43,5 +39,10 @@ class EchoController @Autowired()(service: EchoService) {
   @RequestMapping(Array("/responseFuture"))
   def echoFutureResponse(@RequestParam(required = false, name = "input") input: String): DeferredResult[EchoResponse] = {
     service.echoFutureResponse(input)
+  }
+
+  @RequestMapping(Array("/failedFuture"))
+  def failedFuture(@RequestParam(required = false, name = "input") input: String): DeferredResult[String] = {
+    service.failedEcho(input)
   }
 }

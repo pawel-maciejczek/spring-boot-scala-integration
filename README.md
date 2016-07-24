@@ -4,6 +4,7 @@ There are 3 modules:
 * core - app core services written in scala
 * web-java - application layer with controllers written in java, service methods return java.util.concurrent.Future
 * web-scala - application layer controllers written in java, service results return scala.concurrent.Future
+* web-scala-deferred - application layer controllers written in java, with adapter translating scala.concurrent.Future to org.springframework.web.context.request.async.DeferredResult
 
 To switch the application layer module, just comment/uncomment appropriate module in settings.gradle in the main project and rebuild the app.
 

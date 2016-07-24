@@ -48,4 +48,9 @@ public class EchoController {
         return service.echoFutureResponse(input).get();
     }
 
+    @RequestMapping("/failedFuture")
+    public String failedFuture(@RequestParam(required = false, name = "input") String input) throws ExecutionException, InterruptedException {
+        return service.failedEcho(input).get();
+    }
+
 }

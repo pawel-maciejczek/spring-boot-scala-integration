@@ -52,4 +52,8 @@ public class EchoController {
         return futureAdapterFactory.convert(service.echoFutureResponse(input));
     }
 
+    @RequestMapping("/failedFuture")
+    public DeferredResult<String> failedFuture(@RequestParam(required = false, name = "input") String input) throws ExecutionException, InterruptedException {
+        return futureAdapterFactory.convert(service.failedEcho(input));
+    }
 }

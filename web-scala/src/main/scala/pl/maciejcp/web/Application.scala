@@ -17,8 +17,7 @@ object Application {
 
 @EnableAsync
 @SpringBootApplication
-class Application /*extends App*/ {
-//  SpringApplication.run(classOf[Application])
+class Application {
 
   @Bean
   def echoService(): EchoService = {
